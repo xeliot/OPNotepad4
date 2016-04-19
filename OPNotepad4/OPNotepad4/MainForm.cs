@@ -97,5 +97,20 @@ namespace OPNotepad4
         {
             Close();
         }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtMain.Copy();
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtMain.Paste();
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtMain.Clear();
+        }
     }
 }
