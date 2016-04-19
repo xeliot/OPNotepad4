@@ -124,5 +124,16 @@ namespace OPNotepad4
             fontDialog1.ShowDialog();
             txtMain.Font = fontDialog1.Font;
         }
+
+        private void aboutUsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = new Form();
+            Label label = new Label();
+            label.Text = "(c) The WhatCubes Team. Developer Team of omnibean and daveho8888. Other repositories on github.";
+            label.Font = new Font("Segoe UI", 20);
+            label.Dock = DockStyle.Fill;
+            form.Controls.Add(label);
+            form.Show();
+        }
     }
 }
