@@ -112,5 +112,11 @@ namespace OPNotepad4
         {
             txtMain.Clear();
         }
+
+        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            txtMain.ForeColor = colorDialog1.Color;
+        }
     }
 }
