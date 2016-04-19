@@ -118,5 +118,11 @@ namespace OPNotepad4
             colorDialog1.ShowDialog();
             txtMain.ForeColor = colorDialog1.Color;
         }
+
+        private void fontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowDialog();
+            txtMain.Font = fontDialog1.Font;
+        }
     }
 }

@@ -56,6 +56,7 @@ namespace OPNotepad4
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.randOmStuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.txtMain = new System.Windows.Forms.RichTextBox();
@@ -63,7 +64,8 @@ namespace OPNotepad4
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,11 +160,19 @@ namespace OPNotepad4
             // randOmStuffToolStripMenuItem
             // 
             this.randOmStuffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.colorToolStripMenuItem});
+            this.colorToolStripMenuItem,
+            this.fontToolStripMenuItem});
             this.randOmStuffToolStripMenuItem.Name = "randOmStuffToolStripMenuItem";
             this.randOmStuffToolStripMenuItem.Size = new System.Drawing.Size(81, 29);
             this.randOmStuffToolStripMenuItem.Text = "Format";
             this.randOmStuffToolStripMenuItem.Click += new System.EventHandler(this.RandOmStuffToolStripMenuItemClick);
+            // 
+            // colorToolStripMenuItem
+            // 
+            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
+            this.colorToolStripMenuItem.Text = "Color";
+            this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click);
             // 
             // txtMain
             // 
@@ -203,12 +213,12 @@ namespace OPNotepad4
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // colorToolStripMenuItem
+            // fontToolStripMenuItem
             // 
-            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
-            this.colorToolStripMenuItem.Text = "Color";
-            this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click);
+            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
+            this.fontToolStripMenuItem.Text = "Font";
+            this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -250,5 +260,7 @@ namespace OPNotepad4
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
