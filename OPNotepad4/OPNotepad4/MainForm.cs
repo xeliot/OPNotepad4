@@ -87,5 +87,15 @@ namespace OPNotepad4
             System.IO.StreamReader OpenFile = new System.IO.StreamReader(openFileDialog1.FileName);
             txtMain.Text = OpenFile.ReadToEnd();
         }
+
+        private void txtMain_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
