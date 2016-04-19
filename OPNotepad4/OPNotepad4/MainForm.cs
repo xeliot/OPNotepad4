@@ -32,16 +32,12 @@ namespace OPNotepad4
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
-		void EatCakeToolStripMenuItemClick(object sender, EventArgs e)
-		{
-	
-		}
 		void SaveToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			if (saveFileDialog1.ShowDialog()==DialogResult.OK)
 			{
 				string fileName = saveFileDialog1.FileName;
-				string fileCont = richTextBox1.Text;
+				string fileCont = txtMain.Text;
 				File.WriteAllText(fileName, fileCont);
 				MessageBox.Show("The file has been saved.");
 			}
@@ -63,7 +59,7 @@ namespace OPNotepad4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String text = richTextBox1.Text.Trim();
+            String text = txtMain.Text.Trim();
             int wordCount = 0, index = 0;
 
             while (index < text.Length)
@@ -79,6 +75,17 @@ namespace OPNotepad4
                     index++;
             }
             MessageBox.Show("There are " + wordCount.ToString() + " words in this file.");
+        }
+
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            System.IO.StreamReader OpenFile = new System.IO.StreamReader(openFileDialog1.FileName);
+            txtMain.Text = OpenFile.ReadToEnd();
         }
     }
 }
