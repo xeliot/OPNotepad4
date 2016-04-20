@@ -95,23 +95,16 @@ namespace OPNotepad4
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Form form = new Form();
-            //Button no = new Button();
-            //Button yes = new Button();
-            //Label confirmation = new Label();
-            //confirmation.Text = "Are you sure. Any unsaved work will be lost.";
-            //confirmation.Font = new Font("Segoe UI", 15);
-            //confirmation.Dock = DockStyle.Fill;
-            //no.Text = "No";
-            //yes.Text = "Yes";
-            //no.Location = new Point(170, 190);
-            //yes.Location = new Point(40, 190);
-            //form.Controls.Add(no);
-            //form.Controls.Add(yes);
-            //form.Controls.Add(confirmation);
-            //form.Show();
-            //yes.PerformClick();
-            Close();
+            Confirmation confirmation = new Confirmation();
+            DialogResult dialogresult = confirmation.ShowDialog();
+            if (dialogresult == DialogResult.OK)
+            {
+                Close();
+            }
+            else if (dialogresult == DialogResult.Cancel){
+                confirmation.Dispose();
+            }
+
         }
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
