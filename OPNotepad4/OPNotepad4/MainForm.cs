@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using EPFramework.Forms;
 using MetroFramework.Forms;
+using System.Drawing.Printing;
 
 namespace OPNotepad4
 {
@@ -21,17 +22,19 @@ namespace OPNotepad4
 	/// </summary>
 	public partial class MainForm : MetroForm
 	{
-		public MainForm()
+        private PrintDocument printDocument1 = new PrintDocument();
+        public MainForm()
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
-		}
+            print.Click += new EventHandler(print_Click);
+            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+            //
+            // TODO: Add constructor code after the InitializeComponent() call.
+            //
+        }
 		void SaveToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			if (saveFileDialog1.ShowDialog()==DialogResult.OK)
@@ -138,6 +141,28 @@ namespace OPNotepad4
         {
             AboutUs aboutus = new AboutUs();
             aboutus.Show();
+        }
+
+        private void print_Click(object sender, EventArgs e)
+        {
+            CaptureScreen();
+            printDocument1.Print();
+        }
+        Bitmap memoryImage;
+
+        private void CaptureScreen()
+        {
+            Graphics myGraphics = this.CreateGraphics();
+            Size s = this.Size;
+            memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
+            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
+            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
+        }
+
+        private void printDocument1_PrintPage(System.Object sender,
+               System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(memoryImage, 0, 0);
         }
     }
 }
