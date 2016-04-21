@@ -39,6 +39,7 @@
             this.richTextBox1.ForeColor = System.Drawing.Color.Red;
             this.richTextBox1.Location = new System.Drawing.Point(23, 71);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(303, 141);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "(c) 2016 The WhatCubes Team. Developer Team of omnibean and daveho8888. Other rep" +
@@ -49,7 +50,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderColor = System.Drawing.Color.Red;
-            this.ClientSize = new System.Drawing.Size(366, 289);
+            this.ClientSize = new System.Drawing.Size(348, 216);
             this.Controls.Add(this.richTextBox1);
             this.ForeColor = System.Drawing.Color.Red;
             this.Name = "AboutUs";
